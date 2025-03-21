@@ -1,5 +1,6 @@
 attrs==20.3.0
 matplotlib==3.9.4
+aws-cfn-bootstrap>=1.4.post31
 awscli==1.35.0
 awscrt==0.19.19
 awsebcli==3.21.0
