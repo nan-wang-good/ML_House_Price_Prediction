@@ -48,7 +48,6 @@ requests==2.32.3
 ruamel.yaml==0.16.6
 ruamel.yaml.clib==0.1.2
 semantic-version==2.10.0
-sepolicy==3.4
 setools==4.4.1
 six==1.15.0
 support-info==1.0
