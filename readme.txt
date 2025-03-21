@@ -1,21 +1,21 @@
-- 房价分布直方图 - 展示了房价的整体分布情况
-- 房价与卧室数量关系箱线图 - 分析了不同卧室数量对应的房价范围
-- 不同房产类型的价格箱线图 - 比较了各种房产类型的价格分布
-- BER评级与房价关系柱状图 - 展示了能源评级与房价的关联
-- 房价地理分布热力图 - 通过经纬度可视化房价的地理分布
-- 特征相关性热力图 - 分析了各个数值特征之间的相关性
+- Histogram of house price distribution - shows the overall distribution of house prices
+- Box plot of house price and number of bedrooms - analyzes the range of house prices corresponding to different numbers of bedrooms
+- Box plot of prices of different property types - compares the price distribution of various property types
+- Histogram of BER rating and house price - shows the correlation between energy rating and house price
+- Heat map of geographical distribution of house prices - visualizes the geographical distribution of house prices by latitude and longitude
+- Heat map of feature correlation - analyzes the correlation between various numerical features
 
-主要实现了房价预测模型的训练和评估功能,代码保留了关键的特征列包括卧室数、浴室数、经纬度、房产类型、BER能效评级和国家等。
-为了提高准确度，代码实现了多项改进：
-1）对数据进行了预处理包括处理缺失值和异常值 
-2）添加了派生特征如预估面积和到中心距离 
-3）对BER评级进行了数值映射 
-4）使用了对数转换处理价格 
-5）实现了三种不同的模型(SVM、随机森林、KNN)并进行了性能对比，其中随机森林模型表现最好被选为最终模型
+It mainly implements the training and evaluation functions of the house price prediction model. The code retains key feature columns including the number of bedrooms, number of bathrooms, latitude and longitude, property type, BER energy efficiency rating and country.
+In order to improve accuracy, the code implements a number of improvements:
+1) Data preprocessing including handling missing values ​​and outliers
+2) Added derived features such as estimated area and distance to center
+3) BER ratings were numerically mapped
+4) Logarithmic transformation was used to process prices
+5) Three different models (SVM, random forest, KNN) were implemented and performance was compared, among which the random forest model performed best and was selected as the final model
 
 
 
-数据处理：merge_datasets.py负责合并三个不同来源的房产数据集(daft_housing_data.csv、uae_properties.csv和zp1.csv)，统一了列名和数据格式。
-模型训练：price_prediction.py实现了房价预测模型，保留了关键特征如卧室数、浴室数、经纬度等。通过数据预处理、特征工程和模型优化，最终选择了表现最好的随机森林模型。
-可视化展示：包括了房价分布、房产类型均价、BER评级均价、特征相关性等多个图表，帮助理解数据特征和模型性能。
-Web应用：通过Flask框架搭建了Web界面，用户可以输入房产信息获取预测价格，并通过ECharts展示各类数据可视化图表。
+Data processing: merge_datasets.py is responsible for merging three real estate data sets from different sources (daft_housing_data.csv, uae_properties.csv and zp1.csv), unifying the column names and data formats.
+Model training: price_prediction.py implements the house price prediction model, retaining key features such as the number of bedrooms, the number of bathrooms, longitude and latitude. Through data preprocessing, feature engineering and model optimization, the best performing random forest model was finally selected.
+Visualization display: It includes multiple charts such as house price distribution, average price of property type, average price of BER rating, feature correlation, etc., to help understand data characteristics and model performance.
+Web application: The web interface is built through the Flask framework. Users can enter real estate information to obtain predicted prices, and various data visualization charts are displayed through ECharts.
