@@ -1,4 +1,5 @@
 attrs==20.3.0
+matplotlib-3.9.4
 awscli==1.35.0
 awscrt==0.19.19
 awsebcli==3.21.0
@@ -32,6 +33,7 @@ MarkupSafe==2.1.5
 mercurial==5.7.1
 netifaces==0.10.6
 oauthlib==3.0.2
+pandas==2.2.3
 packaging==21.3
 pathspec==0.10.1
 ply==3.11
