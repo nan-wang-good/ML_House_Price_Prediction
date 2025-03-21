@@ -26,7 +26,7 @@ idna==2.10
 ikp3db==1.4.2
 Jinja2==3.1.2
 jmespath==0.10.0
-joblib==1.0.1
+joblib>=1.2.0
 jsonpatch==1.21
 jsonpointer==2.0
 jsonschema==3.2.0
