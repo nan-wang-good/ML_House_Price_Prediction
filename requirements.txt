@@ -22,6 +22,7 @@ docutils==0.16
 ec2-hibinit-agent==1.0.8
 git-remote-codecommit==1.17
 gpg==1.15.1
+gunicorn==23.0.0
 idna==2.10
 ikp3db==1.4.2
 Jinja2==2.11.3
