@@ -5,9 +5,8 @@ from flask import Flask, request, render_template, jsonify
 from price_prediction import preprocess_data, select_features
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from flask_cors import CORS
-application = Flask(__name__)
-#CORS(application)
+
+app = Flask(__name__)
 
 # Load the trained model and preprocessor
 model = joblib.load('model/rf_model.joblib')
@@ -15,11 +14,11 @@ preprocessor = joblib.load('model/preprocessor.joblib')
 center_lat = joblib.load('model/center_lat.joblib')
 center_lon = joblib.load('model/center_lon.joblib')
 
-@application.route('/')
+@app.route('/')
 def home():
     return render_template('index.html')
 
-@application.route('/visualization_data')
+@app.route('/visualization_data')
 def get_visualization_data():
     try:
         df = pd.read_csv('ML_G14 - datasets/combined_dataset.csv')
@@ -76,7 +75,7 @@ def get_visualization_data():
             'success': False
         })
 
-@application.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['POST'])
 def predict():
     try:
         data = request.get_json()
@@ -139,4 +138,4 @@ def predict():
         })
 
 if __name__ == '__main__':
-    application.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
